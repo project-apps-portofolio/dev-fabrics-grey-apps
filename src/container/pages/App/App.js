@@ -21,7 +21,7 @@ function App() {
                 Example
             </Link>
             </li>
-            <li classNamen="navbar-nav mr-auto">
+            <li className="navbar-nav mr-auto">
               <Link to="/fabric/create" className="nav-link">
                 Example
             </Link>
