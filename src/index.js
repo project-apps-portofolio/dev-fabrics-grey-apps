@@ -7,7 +7,17 @@ import  { BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from "./serviceWorker";
 
 // CSS
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/style.css';
+import './ace-master/assets/css/bootstrap.min.css';
+import './ace-master/assets/font-awesome/4.5.0/css/font-awesome.min.css';
+import './ace-master/assets/css/fonts.googleapis.com.css';
+import './ace-master/assets/css/ace.min.css';
+import './ace-master/assets/css/ace-skins.min.css';
+import './ace-master/assets/css/ace-rtl.min.css';
+// import './ace-master/';
+// import './ace-master/';
+// import './ace-master/';
 
 ReactDOM.render(
   <BrowserRouter>

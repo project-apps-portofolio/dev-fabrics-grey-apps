@@ -19,7 +19,7 @@ class Index extends React.Component {
     }
 
     render() {
-        return <h1>x</h1>;
+        return <h1>Fabric Index</h1>;
       }
 }
 
