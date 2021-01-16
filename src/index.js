@@ -16,8 +16,6 @@ import * as serviceWorker from "./serviceWorker";
 // import './ace-master/assets/css/ace-skins.min.css';
 // import './ace-master/assets/css/ace-rtl.min.css';
 // import './ace-master/';
-// import './ace-master/';
-// import './ace-master/';
 
 ReactDOM.render(
   <BrowserRouter>

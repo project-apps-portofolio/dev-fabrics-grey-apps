@@ -134,7 +134,7 @@ const Index = () => {
                         title={
                             <div>
                                 {" "}
-                                <Link to="add-inventory">
+                                <Link to="/fabric/create">
                                     <button className="btn btn-primary btn-sm">New</button>
                                 </Link>{" "}
                             </div>

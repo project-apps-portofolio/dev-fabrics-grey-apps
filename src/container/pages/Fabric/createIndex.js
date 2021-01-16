@@ -12,7 +12,7 @@ const CreateIndex = () => {
 
     const [fabric, setFabric] = useState(initialize);
     const [submitted, setSubmitted] = useState(false);
-    const [fabric_, setFabric_] = useState([]);
+    // const [fabric_, setFabric_] = useState([]);
 
     const handleInputChange = event => {
         const { name, value } = event.target;
@@ -39,18 +39,18 @@ const CreateIndex = () => {
             });
 
             setSubmitted(true);
-            console.log(console.data);
+            // console.log(console.data);
         })
             .catch(e => {
                 console.log(e);
             });
     };
 
-    useEffect(async () => {
-        const result = await ServiceFabric.getAll();
-        const data_ = result.data.data
-        setFabric_(data_)
-    })
+    // useEffect(async () => {
+    //     const result = await ServiceFabric.getAll();
+    //     const data_ = result.data.data
+    //     setFabric_(data_)
+    // })
 
     return (
         <div>
