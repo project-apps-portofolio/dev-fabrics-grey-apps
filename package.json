@@ -10,6 +10,8 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
+    "datatables.net": "^1.10.23",
+    "jquery": "^3.5.1",
     "mui-datatables": "^3.7.4",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",

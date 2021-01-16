@@ -115,7 +115,7 @@ function App() {
               <Switch>
                 <Route exact path={"/home"} component={Home} />
                 <Route exact path={"/fabric/create"} component={CreateIndex} />
-                <Route path={"/fabric/update/:id"} component={IndexList} />
+                <Route path={"/fabric/list"} component={IndexList} />
                 <Route path={"/fabric/index/"} component={Index} />
                 <Route exact path={["/", "/login"]} component={Login} />
               </Switch>

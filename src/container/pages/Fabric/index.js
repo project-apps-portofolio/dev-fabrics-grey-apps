@@ -2,17 +2,36 @@ import React, { useState, useEffect } from 'react';
 import ServiceFabric from '../.././../services/service';
 import MUIDataTable  from 'mui-datatables';
 import {Link} from 'react-router-dom';
-
+import { makeStyles } from "@material-ui/core/styles";
 const Index = () => {
     const [fabric_, setFabric_] = useState([]);
 
-    useEffect(async () => {
-        const result = await ServiceFabric.getAll();
-        const data_ = result.data.data
-        setFabric_(data_)
-    })
+    useEffect(() => {
+        async function fecthApi() {
+            const result = await ServiceFabric.getAll();
+            const data_ = result.data.data
+            setFabric_(data_)
+        }
+        fecthApi();
+    }, [])
 
-    // const classes = useStyles();
+    const useStyles = makeStyles({
+        table: {
+            minWidth: 650,
+            float: 'left',
+            height: '40px',
+            marginBottom: '20px',
+            borderCollapse: 'separate',
+            borderSpacing: '10px 20px'
+        },
+        root: {
+            flexGrow: 1,
+            marginTop: "20px",
+            padding: '1px',
+        }
+    });
+
+    const classes = useStyles();
     
     const columns = [
         {
@@ -60,7 +79,6 @@ const Index = () => {
     ];
 
     const options = {
-        // filterType: "checkbox",
         filterType: "dropdown",
         responsive: "stacked",
         onRowsDelete: rowsDeleted => {
@@ -83,7 +101,7 @@ const Index = () => {
                 </h1>
             </div>
             {/* /.page-header */}
-            <div className="row">
+            <div className="row" >
                 <div className="col-xs-12">
                 {/* <div className="pull-right form-group">
                     <button className="btn btn-sm btn-primary">New Fabric</button>
@@ -111,6 +129,7 @@ const Index = () => {
                             })}
                         </tbody>
                     </table> */}
+                    <div className={classes.root}>
                     <MUIDataTable className="table table-boredered"
                         title={
                             <div>
@@ -123,7 +142,8 @@ const Index = () => {
                         data={fabric_}
                         columns={columns}
                         options={options}
-                    />{" "}
+                    />
+                    </div>{" "}
                     {/* PAGE CONTENT ENDS */}
                 </div>
                 {/* /.col */}
