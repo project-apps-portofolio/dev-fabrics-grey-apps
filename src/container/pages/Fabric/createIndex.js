@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ServiceFabric from '../.././../services/service';
 
 const CreateIndex = () => {
@@ -12,6 +12,7 @@ const CreateIndex = () => {
 
     const [fabric, setFabric] = useState(initialize);
     const [submitted, setSubmitted] = useState(false);
+    const [fabric_, setFabric_] = useState([]);
 
     const handleInputChange = event => {
         const { name, value } = event.target;
@@ -28,6 +29,7 @@ const CreateIndex = () => {
         };
 
         ServiceFabric.create(data).then(res => {
+
             setFabric({
                 id: res.data.id,
                 fabric_type: res.data.fabric_type,
@@ -43,6 +45,12 @@ const CreateIndex = () => {
                 console.log(e);
             });
     };
+
+    useEffect(async () => {
+        const result = await ServiceFabric.getAll();
+        const data_ = result.data.data
+        setFabric_(data_)
+    })
 
     const newFabric = () => {
         setFabric(initialize);
@@ -76,80 +84,99 @@ const CreateIndex = () => {
                             which you can change using CSS builder tool.
             </div>
                         <div className="submit-form">
-                            {submitted ? (
-                                <div>
-                                    <h1>Submit</h1>
-                                    <button className="btn btn-sm btn-primary" onClick={newFabric}>Add</button>
-                                </div>
-                            ) : (
-                                    <div>
-                                        <div className="card">
-                                            <div className="card-body">
-                                                <div className="col-12-xs col-12-md col-12-sm">
-                                                    <div className="row">
-                                                        <div className="col-md-12 col-sm-6">
-                                                            <div className="from-group">
-                                                                <label htmlFor="fabric-type">Fabirc Type</label>
-                                                                <input type="text"
-                                                                    className="form-control"
-                                                                    id="fabric_type"
-                                                                    required value={fabric.fabric_type}
-                                                                    onChange={handleInputChange}
-                                                                    name="fabric_type"
-                                                                    autoComplete="off" />
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-md-12 col-sm-6">
-                                                            <div className="from-group">
-                                                                <label htmlFor="machine_id">Machine Type</label>
-                                                                <input type="text"
-                                                                    className="form-control"
-                                                                    id="machine_id"
-                                                                    required value={fabric.machine_id}
-                                                                    onChange={handleInputChange}
-                                                                    name="machine_id"
-                                                                    autoComplete="off" />
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-md-12 col-sm-6">
-                                                            <div className="from-group">
-                                                                <label htmlFor="brand">Brand</label>
-                                                                <input type="text"
-                                                                    className="form-control"
-                                                                    id="brand"
-                                                                    required value={fabric.brand}
-                                                                    onChange={handleInputChange}
-                                                                    name="brand"
-                                                                    autoComplete="off" />
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-md-12 col-sm-6">
-                                                            <div className="from-group">
-                                                                <label htmlFor="po_number">PO Number</label>
-                                                                <input type="text"
-                                                                    className="form-control"
-                                                                    id="po_number"
-                                                                    required value={fabric.po_number}
-                                                                    onChange={handleInputChange}
-                                                                    name="po_number"
-                                                                    autoComplete="off" />
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-md-12 col-sm-12">
-                                                            <div className="form-group">
-                                                                <button onClick={saveFabric} className="btn btn-sm btn-primary">
-                                                                    Submit
+                            <div>
+                                <h1>Submit</h1>
+                                <button className="btn btn-sm btn-primary" onClick={newFabric}>Add</button>
+
+                                <table className="table table-boreder table-stripped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Fabric Types</th>
+                                            <th>Brand</th>
+                                            <th>PO Number</th>
+                                            <th>Created At</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {fabric_.map((row) => {
+                                            return (<tr>
+                                                <td>{row.id}</td>
+                                                <td>{row.fabric_type}</td>
+                                                <td>{row.brand}</td>
+                                                <td>{row.po_number}</td>
+                                                <td>{row.created_at}</td>
+                                            </tr>)
+                                        })}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div className="card">
+                                <div className="card-body">
+                                    <div className="col-12-xs col-12-md col-12-sm">
+                                        <div className="row">
+                                            <div className="col-md-12 col-sm-6">
+                                                <div className="from-group">
+                                                    <label htmlFor="fabric-type">Fabirc Type</label>
+                                                    <input type="text"
+                                                        className="form-control"
+                                                        id="fabric_type"
+                                                        required value={fabric.fabric_type}
+                                                        onChange={handleInputChange}
+                                                        name="fabric_type"
+                                                        autoComplete="off" />
+                                                </div>
+                                            </div>
+                                            <div className="col-md-12 col-sm-6">
+                                                <div className="from-group">
+                                                    <label htmlFor="machine_id">Machine Type</label>
+                                                    <input type="text"
+                                                        className="form-control"
+                                                        id="machine_id"
+                                                        required value={fabric.machine_id}
+                                                        onChange={handleInputChange}
+                                                        name="machine_id"
+                                                        autoComplete="off" />
+                                                </div>
+                                            </div>
+                                            <div className="col-md-12 col-sm-6">
+                                                <div className="from-group">
+                                                    <label htmlFor="brand">Brand</label>
+                                                    <input type="text"
+                                                        className="form-control"
+                                                        id="brand"
+                                                        required value={fabric.brand}
+                                                        onChange={handleInputChange}
+                                                        name="brand"
+                                                        autoComplete="off" />
+                                                </div>
+                                            </div>
+                                            <div className="col-md-12 col-sm-6">
+                                                <div className="from-group">
+                                                    <label htmlFor="po_number">PO Number</label>
+                                                    <input type="text"
+                                                        className="form-control"
+                                                        id="po_number"
+                                                        required value={fabric.po_number}
+                                                        onChange={handleInputChange}
+                                                        name="po_number"
+                                                        autoComplete="off" />
+                                                </div>
+                                            </div>
+                                            <div className="col-md-12 col-sm-12">
+                                                <div className="form-group">
+                                                    <button onClick={saveFabric} className="btn btn-sm btn-primary">
+                                                        Submit
                                         </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                )}
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        )}
+                        </div>
                 </div>
             </div>
         </div>
