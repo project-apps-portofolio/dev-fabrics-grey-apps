@@ -7,12 +7,11 @@ import IndexList from '../Fabric/indexList';
 import Index from '../Fabric/index';
 import CreateIndex from '../Fabric/createIndex';
 import Home from '../Home/Home';
+import Login from '../Auth/Login';
 
 function App() {
   return (
     <div>
-      <body className="no-skin">
-
         <div id="navbar" className="navbar navbar-default navbar-collapse h-navbar ace-save-state">
           <div className="navbar-container ace-save-state" id="navbar-container">
             <div className="navbar-header pull-left">
@@ -114,15 +113,15 @@ function App() {
           <div className="main-content">
             <div className="main-content-inner">
               <Switch>
-                <Route exact path={["/", "/home"]} component={Home} />
+                <Route exact path={"/home"} component={Home} />
                 <Route exact path={"/fabric/create"} component={CreateIndex} />
                 <Route path={"/fabric/update/:id"} component={IndexList} />
                 <Route path={"/fabric/index/"} component={Index} />
+                <Route exact path={["/", "/login"]} component={Login} />
               </Switch>
             </div>
           </div>
         </div>
-      </body>
     </div>
   );
 }

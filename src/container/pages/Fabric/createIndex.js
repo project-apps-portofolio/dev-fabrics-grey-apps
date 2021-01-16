@@ -52,11 +52,6 @@ const CreateIndex = () => {
         setFabric_(data_)
     })
 
-    const newFabric = () => {
-        setFabric(initialize);
-        setSubmitted(false);
-    };
-
     return (
         <div>
             <div className="page-content">
@@ -71,46 +66,31 @@ const CreateIndex = () => {
                 </div>
                 {/* /.page-header */}
                 <div className="row">
-                    <div className="col-xs-12">
-                        {/* PAGE CONTENT BEGINS */}
-                        <div className="alert alert-info visible-sm visible-xs">
-                            <button type="button" className="close" data-dismiss="alert">
-                                <i className="ace-icon fa fa-times" />
-                            </button>
-                            Please note that
-               <span className="blue bolder">top menu style</span>
-                            is visible only in devices larger than
-               <span className="blue bolder">991px</span>
-                            which you can change using CSS builder tool.
-            </div>
-                        <div className="submit-form">
-                            <div>
-                                <h1>Submit</h1>
-                                <button className="btn btn-sm btn-primary" onClick={newFabric}>Add</button>
+                    <div className="col-xs-12 col-sm-12 col-md-12">
+                    <div className="row">
+                            <div className="col-xs-12 col-sm-12">
+                                <div className="widget-box">
+                                    <div className="widget-header">
+                                        <h4 className="widget-title">Masked Input</h4>
+                                        <span className="widget-toolbar">
+                                            <a href="#" data-action="settings">
+                                                <i className="ace-icon fa fa-cog" />
+                                            </a>
+                                            <a href="#" data-action="reload">
+                                                <i className="ace-icon fa fa-refresh" />
+                                            </a>
+                                            <a href="#" data-action="collapse">
+                                                <i className="ace-icon fa fa-chevron-up" />
+                                            </a>
+                                            <a href="#" data-action="close">
+                                                <i className="ace-icon fa fa-times" />
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div className="widget-body">
+                                        <div className="widget-main">
 
-                                <table className="table table-boreder table-stripped table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Fabric Types</th>
-                                            <th>Brand</th>
-                                            <th>PO Number</th>
-                                            <th>Created At</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {fabric_.map((row) => {
-                                            return (<tr>
-                                                <td>{row.id}</td>
-                                                <td>{row.fabric_type}</td>
-                                                <td>{row.brand}</td>
-                                                <td>{row.po_number}</td>
-                                                <td>{row.created_at}</td>
-                                            </tr>)
-                                        })}
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div className="submit-form">
                             <div className="card">
                                 <div className="card-body">
                                     <div className="col-12-xs col-12-md col-12-sm">
@@ -175,8 +155,25 @@ const CreateIndex = () => {
                                 </div>
                             </div>
                         </div>
-                        )}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>{/* /.span */}
                         </div>
+                    </div>
+                    <div className="col-xs-12">
+                        {/* PAGE CONTENT BEGINS */}
+                        <div className="alert alert-info visible-sm visible-xs">
+                            <button type="button" className="close" data-dismiss="alert">
+                                <i className="ace-icon fa fa-times" />
+                            </button>
+                            Please note that
+               <span className="blue bolder">top menu style</span>
+                            is visible only in devices larger than
+               <span className="blue bolder">991px</span>
+                            which you can change using CSS builder tool.
+            </div>
+                    </div>
                 </div>
             </div>
         </div>
