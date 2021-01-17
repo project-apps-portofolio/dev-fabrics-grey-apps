@@ -95,7 +95,7 @@ const CreateIndex = () => {
                                 <div className="card-body">
                                     <div className="col-12-xs col-12-md col-12-sm">
                                         <div className="row">
-                                            <div className="col-md-12 col-sm-6">
+                                            <div className="col-md-12 col-xs-12 col-sm-6">
                                                 <div className="from-group">
                                                     <label htmlFor="fabric-type">Fabirc Type</label>
                                                     <input type="text"
@@ -107,7 +107,7 @@ const CreateIndex = () => {
                                                         autoComplete="off" />
                                                 </div>
                                             </div>
-                                            <div className="col-md-12 col-sm-6">
+                                            <div className="col-md-12 col-xs-12 col-sm-6">
                                                 <div className="from-group">
                                                     <label htmlFor="machine_id">Machine Type</label>
                                                     <input type="text"
@@ -119,7 +119,7 @@ const CreateIndex = () => {
                                                         autoComplete="off" />
                                                 </div>
                                             </div>
-                                            <div className="col-md-12 col-sm-6">
+                                            <div className="col-md-12  col-xs-12 col-sm-6">
                                                 <div className="from-group">
                                                     <label htmlFor="brand">Brand</label>
                                                     <input type="text"
@@ -131,7 +131,7 @@ const CreateIndex = () => {
                                                         autoComplete="off" />
                                                 </div>
                                             </div>
-                                            <div className="col-md-12 col-sm-6">
+                                            <div className="col-md-12 col-xs-12  col-sm-6">
                                                 <div className="from-group">
                                                     <label htmlFor="po_number">PO Number</label>
                                                     <input type="text"
@@ -143,11 +143,17 @@ const CreateIndex = () => {
                                                         autoComplete="off" />
                                                 </div>
                                             </div>
-                                            <div className="col-md-12 col-sm-12">
-                                                <div className="form-group">
-                                                    <button onClick={saveFabric} className="btn btn-sm btn-primary">
+                                            <div className="col-md-12 col-xs-12 col-sm-12">
+                                                <div className="form-inline pull-right">
+                                                    <div className="btn-group">
+                                                    <hr/>
+                                                    <a href="/fabric/list" className="btn btn-sm btn-primary">
+                                                        Back
+                                                    </a>
+                                                    <button onClick={saveFabric} style={{ width: "60px;" }} className="btn btn-sm btn-success">
                                                         Submit
-                                        </button>
+                                                    </button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

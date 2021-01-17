@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import DatatableList from './datatable';
-
+import DownloadXls from '../Csv/downloadXls';
 const IndexList = () => {
 
     return (
@@ -8,15 +8,27 @@ const IndexList = () => {
             <div className="page-content">
                 <div className="page-header">
                     <h1>
-                        Top Menu Style
+                        Fabric List All
                         <small>
                             <i className="ace-icon fa fa-angle-double-right" />
-                            top menu &amp; navigation
+                            fabric list menus
                         </small>
                     </h1>
                 </div>
                 {/* /.page-header */}
                 <div className="row" key="unique">
+                    <div className="col-xs-12 col-sm-12 col-md-12">
+                        <div className="form-group pull-left">
+                            <div className="btn-group">
+                                <a href="/fabric/create" className="btn btn-sm btn-primary"><i className="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                        <div className="form-group pull-right">
+                            <div className="btn-group">
+                                <DownloadXls/>
+                            </div>
+                        </div>
+                    </div>
                     <div className="col-xs-12">
                         <DatatableList/>    
                         {/* PAGE CONTENT ENDS */}

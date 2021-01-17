@@ -8,6 +8,7 @@ import Index from '../Fabric/index';
 import CreateIndex from '../Fabric/createIndex';
 import Home from '../Home/Home';
 import Login from '../Auth/Login';
+import DownloadXls from '../Csv/downloadXls';
 
 function App() {
   return (
@@ -73,7 +74,7 @@ function App() {
                 </ul>
               </li> */}
               <li className="hover">
-                <a href="/fabric/index" className="dropdown-toggle">
+                <a href="#tidakada" className="dropdown-toggle">
                   <i className="menu-icon fa fa-list" />
                   <span className="menu-text"> Fabric Grey Management </span>
                   <b className="arrow fa fa-angle-down" />
@@ -84,6 +85,13 @@ function App() {
                     <a href="/fabric/create">
                       <i className="menu-icon fa fa-caret-right" />
                       Fabric
+                    </a>
+                    <b className="arrow" />
+                  </li>
+                  <li className="hover">
+                    <a href="/fabric/list">
+                      <i className="menu-icon fa fa-caret-right" />
+                      Fabric List
                     </a>
                     <b className="arrow" />
                   </li>
@@ -104,6 +112,13 @@ function App() {
                     </a>
                     <b className="arrow" />
                   </li>
+                  <li className="hover">
+                    <a href="/">
+                      <i className="menu-icon fa fa-caret-right" />
+                      Fabric Report
+                    </a>
+                    <b className="arrow" />
+                  </li>
                 </ul>
               </li>
             </ul>
@@ -118,6 +133,7 @@ function App() {
                 <Route path={"/fabric/list"} component={IndexList} />
                 <Route path={"/fabric/index/"} component={Index} />
                 <Route exact path={["/", "/login"]} component={Login} />
+                <Route path={"/xsl"} component={DownloadXls} />
               </Switch>
             </div>
           </div>

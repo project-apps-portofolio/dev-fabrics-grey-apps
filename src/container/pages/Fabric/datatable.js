@@ -33,10 +33,11 @@ class DatatableList extends React.Component {
           // data: this.getfabricData1(), //option 2
           columns: [
             { title: "No" , data: "id"},
-            { title: "Username", data: "fabric_type" },
-            { title: "Name", data: "machine_id" },
-            { title: "Name", data: "brand" },
-            { title: "Name", data: "po_number" },
+            { title: "Fabric Type", data: "fabric_type" },
+            { title: "Machine No", data: "machine_id" },
+            { title: "Brand", data: "brand" },
+            { title: "Po Number", data: "po_number" },
+            { title: "Date", data: "created_at" },
           ],
         });
       }
