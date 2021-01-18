@@ -33,10 +33,14 @@ function App() {
             </div>{/* /.sidebar-shortcuts */}
             <ul className="nav nav-list">
               <li className="hover">
-                <a href="/">
+                {/* <a href="/">
                   <i className="menu-icon fa fa-tachometer" />
                   <span className="menu-text"> Dashboard </span>
-                </a>
+                </a> */}
+                 <Link to="/">
+                      <i className="menu-icon fa fa-tachometer" />
+                      <span className="menu-text"> Dashboard </span>
+                    </Link>
                 <b className="arrow" />
               </li>
               {/* <li className="active open hover">
@@ -82,17 +86,25 @@ function App() {
                 <b className="arrow" />
                 <ul className="submenu">
                   <li className="hover">
-                    <a href="/fabric/create">
+                    <Link to="/fabric/create">
                       <i className="menu-icon fa fa-caret-right" />
                       Fabric
-                    </a>
+                    </Link>
+                    {/* <a href="/fabric/create">
+                      <i className="menu-icon fa fa-caret-right" />
+                      Fabric
+                    </a> */}
                     <b className="arrow" />
                   </li>
                   <li className="hover">
-                    <a href="/fabric/list">
+                  <Link to="/fabric/list">
                       <i className="menu-icon fa fa-caret-right" />
                       Fabric List
-                    </a>
+                  </Link>
+                    {/* <a href="/fabric/list">
+                      <i className="menu-icon fa fa-caret-right" />
+                      Fabric List
+                    </a> */}
                     <b className="arrow" />
                   </li>
                 </ul>
@@ -106,17 +118,25 @@ function App() {
                 <b className="arrow" />
                 <ul className="submenu">
                   <li className="hover">
-                    <a href="tables.html">
+                    {/* <a href="tables.html">
                       <i className="menu-icon fa fa-caret-right" />
                       Fabric Report
-                    </a>
+                    </a> */}
+                    <Link to="/fabric/list">
+                      <i className="menu-icon fa fa-caret-right" />
+                      Fabric List
+                  </Link>
                     <b className="arrow" />
                   </li>
                   <li className="hover">
-                    <a href="/">
+                    {/* <a href="/">
                       <i className="menu-icon fa fa-caret-right" />
                       Fabric Report
-                    </a>
+                    </a> */}
+                                      <Link to="/fabric/list">
+                      <i className="menu-icon fa fa-caret-right" />
+                      Fabric List
+                  </Link>
                     <b className="arrow" />
                   </li>
                 </ul>
