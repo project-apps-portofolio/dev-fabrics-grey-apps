@@ -33,14 +33,14 @@ $ npm start
 
 ## Languages & tools
 
-HTML
+* HTML
     - html for some templating
 
-Javascript
+* Javascript
     - React is used UI 
     - Jquery
     - Datatable
 
-CSS
+* CSS
     - Boostrap
     - Ace Twitter
