@@ -38,9 +38,9 @@ $ npm start
 
 * Javascript
     - React is used UI 
-    - Jquery
-    - Datatable
+    - Jquery is used for action 
+    - Datatable is used for table
 
 * CSS
-    - Boostrap
-    - Ace Twitter
+    - Boostrap 3 is used ui boostrap 3
+    - Ace Twitter templating admin 
