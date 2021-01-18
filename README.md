@@ -16,3 +16,31 @@ $ npm --version
 6.14.9
 ```
 
+## Install
+
+```
+$ git clone https://github.com/project-apps-portofolio/dev-fabrics-grey-frontend.git
+$ cd dev-fabrics-grey-frontend
+$ npm install
+
+```
+
+## Start & watch
+
+```
+$ npm start
+```
+
+## Languages & tools
+
+HTML
+    - html for some templating
+
+Javascript
+    - React is used UI 
+    - Jquery
+    - Datatable
+
+CSS
+    - Boostrap
+    - Ace Twitter
