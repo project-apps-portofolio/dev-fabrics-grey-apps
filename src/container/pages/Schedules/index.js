@@ -34,6 +34,7 @@ function generateItems() {
     const items = {};
     // @ts-ignore
     let start = GSTC.api.date().startOf('day').subtract(6, 'day');
+    console.log(start.add(1, 'day'));
     for (let i = 0; i < 100; i++) {
         const id = GSTC.api.GSTCID(i.toString());
         const rowId = GSTC.api.GSTCID(Math.floor(Math.random() * 100).toString());
