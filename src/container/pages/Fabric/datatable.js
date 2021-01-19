@@ -9,16 +9,18 @@ class DatatableList extends React.Component {
 
     constructor(props) {
         super(props);
+        // Submit dibawah untuk onclick function submit
+        // this.submit = this.submit.bind(this);
         this.state = {
           fabric: [],
-          loading: true
+          loading: true,
         };
       }
     
 
     async getfabricData() {
         const res = await ServiceFabric.getAll();
-        console.log(res.data.data);
+        // console.log(res.data.data);
         this.setState({ loading: false, fabric: res.data.data });
       }
 

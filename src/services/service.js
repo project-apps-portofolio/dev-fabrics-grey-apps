@@ -12,6 +12,13 @@ const create = data => {
     return http.post("/fabric/store", data);
 }
 
+
+// Machine
+
+const getMachine = () => {
+    return http.get('/machine');
+}
+
 // const update = (id, data) => {
 //     return http.put(`/fabric/index/${id}`, data);
 // }
@@ -28,6 +35,7 @@ export default {
     getAll,
     get,
     create,
+    getMachine,
     // update,
     // remove,
     // removeAll,
