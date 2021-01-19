@@ -10,6 +10,7 @@ import Home from '../Home/Home';
 import Login from '../Auth/Login';
 import DownloadXls from '../Csv/downloadXls';
 import IndexMachine from '../Machine/Index';
+import CreateMachine from '../Machine/Create';
 
 function App() {
   return (
@@ -133,17 +134,18 @@ function App() {
           <div className="main-content">
             <div className="main-content-inner">
               <Switch>
+                {/* Login */}
+                <Route exact path={["/", "/login"]} component={Login} />
+                {/* Dashboard */}
                 <Route exact path={"/home"} component={Home} />
                 {/* Fabric */}
                 <Route exact path={"/fabric/create"} component={CreateIndex} />
-                <Route path={"/fabric/list"} component={IndexList} />
-                <Route path={"/fabric/index/"} component={Index} />
-                <Route exact path={["/", "/login"]} component={Login} />
-                <Route path={"/xsl"} component={DownloadXls} />
+                  <Route path={"/fabric/list"} component={IndexList} />
+                  <Route path={"/fabric/index/"} component={Index} />
+                  <Route path={"/xsl"} component={DownloadXls} />
                 {/* Machine */}
-                {/* <Route exact path={"/machiine/create"} component={CreateIndex} />
-                <Route path={"/machiine/list"} component={IndexList} /> */}
-                <Route path={"/machine/index"} component={IndexMachine} />
+                <Route exact path={"/machine/index"} component={IndexMachine} />
+                  <Route path={"/machine/create"} component={CreateMachine} />
               </Switch>
             </div>
           </div>

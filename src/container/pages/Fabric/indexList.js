@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import DatatableList from './datatable';
 import DownloadXls from '../Csv/downloadXls';
+import {Link} from 'react-router-dom';
 const IndexList = () => {
 
     return (
@@ -20,7 +21,9 @@ const IndexList = () => {
                     <div className="col-xs-12 col-sm-12 col-md-12">
                         <div className="form-group pull-left">
                             <div className="btn-group">
-                                <a href="/fabric/create" className="btn btn-sm btn-primary"><i className="fa fa-plus"></i></a>
+                            <Link to="/fabric/create">
+                                    <button className="btn btn-primary btn-sm">New</button>
+                                </Link>
                             </div>
                         </div>
                         <div className="form-group pull-right">
@@ -28,7 +31,7 @@ const IndexList = () => {
                                 <DownloadXls/>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                     <div className="col-xs-12">
                         <DatatableList/>    
                         {/* PAGE CONTENT ENDS */}

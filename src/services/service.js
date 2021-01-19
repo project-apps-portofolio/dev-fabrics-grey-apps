@@ -19,6 +19,10 @@ const getMachine = () => {
     return http.get('/machine');
 }
 
+const createMachine = data => {
+    return http.post('/machine/store', data);
+}
+
 // const update = (id, data) => {
 //     return http.put(`/fabric/index/${id}`, data);
 // }
@@ -36,6 +40,7 @@ export default {
     get,
     create,
     getMachine,
+    createMachine,
     // update,
     // remove,
     // removeAll,
