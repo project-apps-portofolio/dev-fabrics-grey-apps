@@ -47,9 +47,9 @@ const ExampleComponent = () => {
             id: dataItem.id,
             start: parseAdjust(dataItem.start),
             // startTimezone: dataItem.startTimezone,
-            end: parseAdjust(now),
+            end: parseAdjust(dataItem.end),
             // endTimezone: dataItem.endTimezone,
-            isAllDay: dataItem.is_all_day,
+            isAllDay: false,
             title: dataItem.title,
             description: dataItem.description,
             // recurrenceRule: dataItem.RecurrenceRule,
@@ -59,8 +59,6 @@ const ExampleComponent = () => {
             personId: randomInt(1, 2),
         }
     ));
-
-console.log(sampleDataWithResources);
   return (
     <div className="page-content">
       <div className="page-header">
@@ -144,8 +142,8 @@ console.log(sampleDataWithResources);
                       title="Hour-By-Hour"
 
                       columnWidth={100}
-                      slotDuration={120}
-                      slotDivisions={1}
+                      slotDuration={60}
+                      slotDivisions={7}
                       numberOfDays={2}
 
                       workDayStart={"08:00"}
