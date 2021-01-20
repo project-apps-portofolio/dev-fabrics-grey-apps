@@ -11,7 +11,7 @@ import Login from '../Auth/Login';
 import DownloadXls from '../Csv/downloadXls';
 import IndexMachine from '../Machine/Index';
 import CreateMachine from '../Machine/Create';
-import Scheules from '../Schedules';
+import ExampleComponent from '../Schedules/Schedules';
 
 function App() {
   return (
@@ -149,7 +149,10 @@ function App() {
                   <Route path={"/machine/create"} component={CreateMachine} />
                 {/* Schdules */}
                 
-                <Route exact path={"/schedules"} component={Scheules} />
+                <Route exact path={"/schedules"} component={ExampleComponent} />
+
+                {/* <Route exact path={"/calender"} component={Calender} /> */}
+                
               </Switch>
             </div>
           </div>

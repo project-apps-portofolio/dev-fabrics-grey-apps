@@ -3,8 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
+    "@fullcalendar/core": "^5.5.1",
+    "@fullcalendar/daygrid": "^5.5.0",
+    "@fullcalendar/react": "^5.5.0",
+    "@fullcalendar/resource-timeline": "^5.5.0",
+    "@fullcalendar/timegrid": "^5.5.1",
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
+    "@progress/kendo-data-query": "^1.5.4",
+    "@progress/kendo-date-math": "^1.5.1",
+    "@progress/kendo-drawing": "^1.9.3",
+    "@progress/kendo-licensing": "^1.1.3",
+    "@progress/kendo-react-animation": "^4.3.0",
+    "@progress/kendo-react-buttons": "^4.3.0",
+    "@progress/kendo-react-data-tools": "^4.3.0",
+    "@progress/kendo-react-dateinputs": "^4.3.0",
+    "@progress/kendo-react-dialogs": "^4.3.0",
+    "@progress/kendo-react-dropdowns": "^4.3.0",
+    "@progress/kendo-react-form": "^4.3.0",
+    "@progress/kendo-react-grid": "^4.3.0",
+    "@progress/kendo-react-inputs": "^4.3.0",
+    "@progress/kendo-react-intl": "^4.3.0",
+    "@progress/kendo-react-popup": "^4.3.0",
+    "@progress/kendo-react-scheduler": "^4.3.0",
+    "@progress/kendo-react-treeview": "^4.3.0",
+    "@progress/kendo-theme-default": "^4.32.0",
     "@react-pdf/renderer": "^1.6.12",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -12,6 +37,8 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
     "datatables.net": "^1.10.23",
+    "date-fns": "^2.16.1",
+    "fullcalendar-reactwrapper-with-scheduler": "^1.2.0",
     "gantt-schedule-timeline-calendar": "^3.6.6",
     "jquery": "^3.5.1",
     "mui-datatables": "^3.7.4",
@@ -46,5 +73,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/date-fns": "^2.6.0"
   }
 }

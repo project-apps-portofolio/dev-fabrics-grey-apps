@@ -17,7 +17,7 @@ function generateRows() {
      * @type { import("gantt-schedule-timeline-calendar").Rows }
      */
     const rows = {};
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 10; i++) {
         const id = GSTC.api.GSTCID(i.toString());
         rows[id] = {
             id,
@@ -35,10 +35,12 @@ function generateItems() {
     // @ts-ignore
     let start = GSTC.api.date().startOf('day').subtract(6, 'day');
     console.log(start.add(1, 'day'));
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 10; i++) {
         const id = GSTC.api.GSTCID(i.toString());
-        const rowId = GSTC.api.GSTCID(Math.floor(Math.random() * 100).toString());
+        const rowId = GSTC.api.GSTCID(Math.floor(Math.random() * 10).toString());
         start = start.add(1, 'day');
+
+    console.log(id)
         items[id] = {
             id,
             label: `Item ${i}`,
@@ -49,6 +51,8 @@ function generateItems() {
             },
         };
     }
+
+    console.log(items)
     return items;
 }
 

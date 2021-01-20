@@ -8,6 +8,11 @@ import * as serviceWorker from "./serviceWorker";
 
 // CSS
 // import 'bootstrap/dist/css/bootstrap.min.css';
+import 'fullcalendar/dist/fullcalendar.min.css';
+import 'fullcalendar-scheduler/dist/scheduler.min.css';
+// import "@fullcalendar/core/main.css";
+// import "@fullcalendar/timeline/main.css";
+// import "@fullcalendar/resource-timeline/main.css";
 // import './assets/style.css';
 // import './ace-master/assets/css/bootstrap.min.css';
 // import './ace-master/assets/font-awesome/4.5.0/css/font-awesome.min.css';
