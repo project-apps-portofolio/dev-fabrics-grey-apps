@@ -773,6 +773,20 @@ const baseData = [
         "RecurrenceID": null,
         "RecurrenceException": null,
         "isAllDay": false
+    },
+    {
+        "TaskID": 120,
+        "OwnerID": 3,
+        "Title": "Website upload",
+        "Description": "",
+        "StartTimezone": null,
+        "Start": new Date(),
+        "End": new Date(),
+        "EndTimezone": null,
+        "RecurrenceRule": "",
+        "RecurrenceID": null,
+        "RecurrenceException": null,
+        "isAllDay": false
     }
 ];
 
@@ -796,8 +810,9 @@ const parseAdjust = (eventDate) => {
 
 const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-export const displayDate = new Date(Date.UTC(currentYear, 5, 24));
-
+// export const displayDate = new Date(Date.UTC(currentYear, 5, 24));
+export const displayDate = new Date();
+console.log(displayDate);
 export const sampleData = baseData.map(dataItem => (
     {
         id: dataItem.TaskID,
