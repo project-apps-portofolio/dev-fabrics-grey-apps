@@ -1,5 +1,5 @@
 // import React...
-import React from 'react';
+import React, {useEffect} from 'react';
 
 // import { Scheduler, TimelineView } from '@progress/kendo-react-scheduler';
 // import { sampleData, displayDate } from './data/events-utc-.js';
@@ -9,17 +9,58 @@ import * as ReactDOM from 'react-dom';
 
 import { Scheduler, TimelineView } from '@progress/kendo-react-scheduler';
 import { sampleDataWithResources, displayDate } from './data/events-utc-group.js';
+import ServiceFabric from '../.././../services/service';
 
 import '@progress/kendo-theme-default/dist/all.css';
    
 const ExampleComponent = () => {
   const [orientation, setOrientation] = React.useState('vertical');
+  const [schedule, setSchedule] = React.useState([]);
 
     const handleOrientationChange = React.useCallback(
         (event) => { setOrientation(event.target.value) },
         [setOrientation]
     );
 
+    useEffect(() => {
+      async function fecthApi() {
+          const result = await ServiceFabric.getSchedule();
+          setSchedule(result.data);
+      }
+      fecthApi();
+  }, [])
+
+
+    const currentYear = new Date().getFullYear();
+    const parseAdjust = (eventDate) => {
+        const date = new Date(eventDate);
+        date.setFullYear(currentYear);
+        return date;
+    };
+
+    const now = new Date();
+
+    const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+    const sampleDataWithResources = schedule.map(dataItem => (
+        {
+            id: dataItem.id,
+            start: parseAdjust(dataItem.start),
+            // startTimezone: dataItem.startTimezone,
+            end: parseAdjust(now),
+            // endTimezone: dataItem.endTimezone,
+            isAllDay: dataItem.is_all_day,
+            title: dataItem.title,
+            description: dataItem.description,
+            // recurrenceRule: dataItem.RecurrenceRule,
+            // recurrenceId: dataItem.RecurrenceID,
+            // recurrenceExceptions: dataItem.RecurrenceException,
+            roomId: randomInt(1, 2),
+            personId: randomInt(1, 2),
+        }
+    ));
+
+console.log(sampleDataWithResources);
   return (
     <div className="page-content">
       <div className="page-header">

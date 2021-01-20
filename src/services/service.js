@@ -23,6 +23,13 @@ const createMachine = data => {
     return http.post('/machine/store', data);
 }
 
+
+// Schedule
+
+const getSchedule = () => {
+    return http.get('/schedules');
+}
+
 // const update = (id, data) => {
 //     return http.put(`/fabric/index/${id}`, data);
 // }
@@ -41,6 +48,7 @@ export default {
     create,
     getMachine,
     createMachine,
+    getSchedule,
     // update,
     // remove,
     // removeAll,
