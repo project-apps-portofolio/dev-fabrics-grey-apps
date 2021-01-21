@@ -12,6 +12,7 @@ import DownloadXls from '../Csv/downloadXls';
 import IndexMachine from '../Machine/Index';
 import CreateMachine from '../Machine/Create';
 import ExampleComponent from '../Schedules/Schedules';
+import ScheduleIndex from '../Schedules/ScheduleIndex';
 
 function App() {
   return (
@@ -128,6 +129,30 @@ function App() {
                   </li>
                 </ul>
               </li>
+              <li className="hover">
+                <a href="#" className="dropdown-toggle">
+                  <i className="menu-icon fa fa-desktop" />
+                  <span className="menu-text">Schedules</span>
+                  <b className="arrow fa fa-angle-down" />
+                </a>
+                <b className="arrow" />
+                <ul className="submenu">
+                  <li className="hover">
+                    <Link to="/schedules/timeline">
+                      <i className="menu-icon fa fa-caret-right" />
+                      Schdules Timeline
+                  </Link>
+                    <b className="arrow" />
+                  </li>
+                  <li className="hover">
+                    <Link to="/schedules">
+                      <i className="menu-icon fa fa-caret-right" />
+                      Jadwal Grey
+                  </Link>
+                    <b className="arrow" />
+                  </li>
+                </ul>
+              </li>
             </ul>
           </div>
 
@@ -148,8 +173,8 @@ function App() {
                 <Route exact path={"/machine/index"} component={IndexMachine} />
                   <Route path={"/machine/create"} component={CreateMachine} />
                 {/* Schdules */}
-                
-                <Route exact path={"/schedules"} component={ExampleComponent} />
+                <Route exact path={"/schedules"} component={ScheduleIndex} />
+                <Route path={"/schedules/timeline"} component={ExampleComponent} />
 
                 {/* <Route exact path={"/calender"} component={Calender} /> */}
                 

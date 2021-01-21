@@ -43,6 +43,7 @@ const ExampleComponent = () => {
     const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
     const sampleDataWithResources = schedule.map(dataItem => (
+        console.log(dataItem),
         {
             id: dataItem.id,
             start: parseAdjust(dataItem.start),
@@ -56,7 +57,7 @@ const ExampleComponent = () => {
             // recurrenceId: dataItem.RecurrenceID,
             // recurrenceExceptions: dataItem.RecurrenceException,
             roomId: randomInt(1, 2),
-            personId: randomInt(1, 2),
+            personId: randomInt(2, 1),
         }
     ));
   return (
