@@ -30,6 +30,10 @@ const getSchedule = () => {
     return http.get('/schedules');
 }
 
+const getIdSchedule = id => {
+    return http.get(`/schedules/show/${id}`);
+}
+
 // const update = (id, data) => {
 //     return http.put(`/fabric/index/${id}`, data);
 // }
@@ -49,6 +53,7 @@ export default {
     getMachine,
     createMachine,
     getSchedule,
+    getIdSchedule,
     // update,
     // remove,
     // removeAll,

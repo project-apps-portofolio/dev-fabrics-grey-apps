@@ -1,5 +1,5 @@
 // import './App.css';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch, Router } from 'react-router-dom';
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import '../App/App.css';
 
@@ -13,6 +13,8 @@ import IndexMachine from '../Machine/Index';
 import CreateMachine from '../Machine/Create';
 import ExampleComponent from '../Schedules/Schedules';
 import ScheduleIndex from '../Schedules/ScheduleIndex';
+import ScheduleShow from '../Schedules/Show';
+import history from '../../../services/history'
 
 function App() {
   return (
@@ -175,7 +177,7 @@ function App() {
                 {/* Schdules */}
                 <Route exact path={"/schedules"} component={ScheduleIndex} />
                 <Route path={"/schedules/timeline"} component={ExampleComponent} />
-
+                <Route exact path={"/schedules/show/:id"} component={ScheduleShow} />
                 {/* <Route exact path={"/calender"} component={Calender} /> */}
                 
               </Switch>
