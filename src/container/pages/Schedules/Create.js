@@ -1,7 +1,11 @@
 import React from 'react';
 import Select from 'react-select';
 import Service from '../.././../services/service';
-import { DateTimePicker } from 'react-widgets'
+import { DateTimePicker, DropdownList } from 'react-widgets'
+const moment = require('moment');
+
+const date = moment().format('YYYY-MM-dd');
+
 
 const options = [
     { value: 'chocolate', label: 'Chocolate' },
@@ -16,6 +20,7 @@ class ScheduleCreate extends React.Component {
         super(props);
             this.state = {
                 machine: [],
+                BIRTH_OF_DATE: moment().format("yyyy-MM-d")
             }
     }
 
@@ -23,24 +28,20 @@ class ScheduleCreate extends React.Component {
         const res = await Service.getMachine().then(res => {
             this.setState({ machine: res.data.data });
         });
+
+        // console.log(this.props.initialValue);
         // console.log(res.data.data);
     }
 
     componentDidMount() {
         this.getMachine();
+        console.log(this.state.BIRTH_OF_DATE)
     }
 
     handleChange = selectedOption => {
         this.setState({ selectedOption });
         console.log(`Option selected:`, selectedOption);
       };
-
-    filterLastName = (person, value) => {
-        let lastname = person.lastName.toLowerCase()
-        let search  = value.toLowerCase();
-      
-        return lastname.indexOf(search) === 0
-      }
 
     render() {
         return (
@@ -65,7 +66,12 @@ class ScheduleCreate extends React.Component {
                                     <label className="col-sm-3 control-label no-padding-right" htmlFor="form-field-1"> Tanggal </label>
                                     <div className="col-sm-9">
                                         <DateTimePicker
+                                            // initialValue={new Date()}
+                                            // value={this.state.value}
+                                            // onChange={() => this.handleDate(this.state.initialValue)}
                                             defaultValue={new Date()}
+                                            selected={this.state.BIRTH_OF_DATE}
+                                              onChange={(newDate) => this.setState({BIRTH_OF_DATE: moment(newDate).format("yyyy-MM-dd")})}
                                         />
                                     </div>
                                 </div>
