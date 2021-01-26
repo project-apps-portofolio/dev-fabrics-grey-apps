@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Select from 'react-select';
 import Service from '../.././../services/service';
 import { DateTimePicker } from 'react-widgets'
@@ -12,20 +12,35 @@ const options = [
 
 class ScheduleCreate extends React.Component {
 
-    state = {
-        selectedOption: null,
+    constructor(props) {
+        super(props);
+            this.state = {
+                machine: [],
+            }
+    }
+
+    async getMachine() {
+        const res = await Service.getMachine().then(res => {
+            this.setState({ machine: res.data.data });
+        });
+        // console.log(res.data.data);
     }
 
     componentDidMount() {
-        const result = Service.getMachine().then( res => {
-            console.log(res);
-        });
+        this.getMachine();
     }
 
     handleChange = selectedOption => {
         this.setState({ selectedOption });
         console.log(`Option selected:`, selectedOption);
       };
+
+    filterLastName = (person, value) => {
+        let lastname = person.lastName.toLowerCase()
+        let search  = value.toLowerCase();
+      
+        return lastname.indexOf(search) === 0
+      }
 
     render() {
         return (
@@ -75,14 +90,14 @@ class ScheduleCreate extends React.Component {
                                 <div className="form-group">
                                     <label className="col-sm-3 control-label no-padding-right" htmlFor="form-field-1-1"> Nomor Jobs </label>
                                     <div className="col-sm-9">
-                                    <Select onChange={this.handleChange} options={options} />
+                                    <Select onChange={this.handleChange} options={this.state.machine.map( e => ({ label: e.short_name, value: e.id}))} />
                                     </div>
                                 </div>
                                 <div className="space-4" />
                                 <div className="form-group">
                                     <label className="col-sm-3 control-label no-padding-right" htmlFor="form-field-1-1"> Catatan Timeline </label>
                                     <div className="col-sm-9">
-                                        <input type="text" id="form-field-1-1" placeholder="Text Field" className="form-control" />
+                                        <input type="textarea" id="form-field-1-1" placeholder="Text Field" className="form-control" />
                                     </div>
                                 </div>
                                 <div className="clearfix form-actions">
