@@ -15,6 +15,7 @@ import ExampleComponent from '../Schedules/Schedules';
 import ScheduleIndex from '../Schedules/ScheduleIndex';
 import ScheduleShow from '../Schedules/Show';
 import history from '../../../services/history'
+import ScheduleCreate from '../Schedules/Create';
 
 function App() {
   return (
@@ -177,6 +178,7 @@ function App() {
                 {/* Schdules */}
                 <Route exact path={"/schedules"} component={ScheduleIndex} />
                 <Route path={"/schedules/timeline"} component={ExampleComponent} />
+                <Route path={"/schedules/create"} component={ScheduleCreate} />
                 <Route exact path={"/schedules/show/:id"} component={ScheduleShow} />
                 {/* <Route exact path={"/calender"} component={Calender} /> */}
                 

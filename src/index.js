@@ -10,6 +10,8 @@ import * as serviceWorker from "./serviceWorker";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import 'fullcalendar/dist/fullcalendar.min.css';
 import 'fullcalendar-scheduler/dist/scheduler.min.css';
+import 'react-widgets/dist/css/react-widgets.css';
+// import 'react-select/dist/css/react-select.css';
 // import "@fullcalendar/core/main.css";
 // import "@fullcalendar/timeline/main.css";
 // import "@fullcalendar/resource-timeline/main.css";
