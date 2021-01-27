@@ -34,6 +34,20 @@ const getIdSchedule = id => {
     return http.get(`/schedules/show/${id}`);
 }
 
+const postSchedule = data => {
+    return http.post('/schedules/store', data);
+}
+
+// Job
+
+const getJob = () => {
+    return http.get('/job');
+}
+
+const postJob = data => {
+    return http.post('/job/store', data);
+}
+
 // const update = (id, data) => {
 //     return http.put(`/fabric/index/${id}`, data);
 // }
@@ -54,6 +68,9 @@ export default {
     createMachine,
     getSchedule,
     getIdSchedule,
+    postSchedule,
+    getJob,
+    postJob,
     // update,
     // remove,
     // removeAll,

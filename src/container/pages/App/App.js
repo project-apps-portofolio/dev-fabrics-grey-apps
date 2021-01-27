@@ -16,6 +16,8 @@ import ScheduleIndex from '../Schedules/ScheduleIndex';
 import ScheduleShow from '../Schedules/Show';
 import history from '../../../services/history'
 import ScheduleCreate from '../Schedules/Create';
+import JobIndex from '../Job/Index';
+import JobCreate from '../Job/Create';
 
 function App() {
   return (
@@ -156,6 +158,23 @@ function App() {
                   </li>
                 </ul>
               </li>
+              <li className="hover">
+                <a href="#" className="dropdown-toggle">
+                  <i className="menu-icon fa fa-desktop" />
+                  <span className="menu-text">Jobs</span>
+                  <b className="arrow fa fa-angle-down" />
+                </a>
+                <b className="arrow" />
+                <ul className="submenu">
+                  <li className="hover">
+                    <Link to="/jobs">
+                      <i className="menu-icon fa fa-caret-right" />
+                      Kartu Kain Grey
+                  </Link>
+                    <b className="arrow" />
+                  </li>
+                </ul>
+              </li>
             </ul>
           </div>
 
@@ -181,7 +200,10 @@ function App() {
                 <Route path={"/schedules/create"} component={ScheduleCreate} />
                 <Route exact path={"/schedules/show/:id"} component={ScheduleShow} />
                 {/* <Route exact path={"/calender"} component={Calender} /> */}
-                
+                {/* Jobs */}
+
+                <Route exact path={"/jobs"} component={JobIndex} />
+                <Route path={"/jobs/create"} component={JobCreate} />
               </Switch>
             </div>
           </div>

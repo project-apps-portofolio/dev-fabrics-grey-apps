@@ -11,37 +11,57 @@ const options = [
     { value: 'chocolate', label: 'Chocolate' },
     { value: 'strawberry', label: 'Strawberry' },
     { value: 'vanilla', label: 'Vanilla' },
-  ];
-  
+];
+
 
 class ScheduleCreate extends React.Component {
 
     constructor(props) {
         super(props);
-            this.state = {
-                machine: [],
-                BIRTH_OF_DATE: moment().format("yyyy-MM-d")
-            }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = {
+            machine: [],
+            date: moment().format("yyyy-MM-d"),
+            job_id: '',
+            machineId: '',
+        }
     }
 
     async getMachine() {
         const res = await Service.getMachine().then(res => {
             this.setState({ machine: res.data.data });
         });
-
-        // console.log(this.props.initialValue);
-        // console.log(res.data.data);
     }
 
     componentDidMount() {
         this.getMachine();
-        console.log(this.state.BIRTH_OF_DATE)
     }
 
     handleChange = selectedOption => {
-        this.setState({ selectedOption });
-        console.log(`Option selected:`, selectedOption);
-      };
+        this.setState({ job_id: selectedOption.value });
+        // console.log(`Option selected:`, selectedOption);
+    };
+
+    onMachineChanged = (e) => {
+        this.setState({
+            machineId: e.currentTarget.value
+        })
+        console.log(e.currentTarget.value)
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+
+        const data = {
+            date: this.state.date,
+            job_id: this.state.job_id
+        }
+
+        const data1 = Service.postSchedule(data);
+
+        console.log(data1);
+    }
+
 
     render() {
         return (
@@ -49,7 +69,7 @@ class ScheduleCreate extends React.Component {
                 <div className="page-header">
                     Jadwal Baru
                 </div>
-    
+
                 <div className="row">
                     <div className="panel panel-default">
                         <div className="panel-body">
@@ -58,9 +78,9 @@ class ScheduleCreate extends React.Component {
                                 Karu bertanggungjawab mengisi Jam Mulai &amp; Jam Selesai Jadwalnya masing-masing.<br />
                                 Proses yang sudah selesai harus di-update dengan Jam Mulai &amp; Jam Selesai aktual!
               </div>
-    
+
                             {/* Content */}
-    
+
                             <form className="form-horizontal" role="form">
                                 <div className="form-group">
                                     <label className="col-sm-3 control-label no-padding-right" htmlFor="form-field-1"> Tanggal </label>
@@ -70,33 +90,33 @@ class ScheduleCreate extends React.Component {
                                             // value={this.state.value}
                                             // onChange={() => this.handleDate(this.state.initialValue)}
                                             defaultValue={new Date()}
-                                            selected={this.state.BIRTH_OF_DATE}
-                                              onChange={(newDate) => this.setState({BIRTH_OF_DATE: moment(newDate).format("yyyy-MM-dd")})}
+                                            selected={this.state.date}
+                                            onChange={(newDate) => this.setState({ date: moment(newDate).format("yyyy-MM-d") })}
                                         />
                                     </div>
                                 </div>
                                 <div className="form-group">
                                     <label className="col-sm-3 control-label no-padding-right" htmlFor="form-field-1-1"> Urutan Mesin </label>
                                     <div className="col-sm-9">
-                                        <label className="radio-inline">
-                                            <input type="radio" name="radio-bot" checked/> Mesin 1
-                                        </label>
-                                        <label className="radio-inline">
-                                            <input type="radio" name="radio-bot" checked/> Mesin 2
-                                        </label>
-                                        <label className="radio-inline">
-                                            <input type="radio" name="radio-bot" checked/> Mesin 2
-                                        </label>
-                                        <label className="radio-inline">
-                                            <input type="radio" name="radio-bot" checked/> Mesin 2
-                                        </label>
+                                        {this.state.machine.map((result) => {
+                                            return (
+                                                <label className="radio-inline">
+                                                    <input type="radio" name="site_name" 
+                                                    value={result.short_name}
+                                                    name={this.state.machineId}
+                                                    onChange={this.onMachineChanged}
+                                                    checked={this.state.machineId === result.short_name}/>
+                                                    {result.short_name}
+                                                </label>
+                                            )
+                                        })}
                                     </div>
                                 </div>
                                 <div className="space-4" />
                                 <div className="form-group">
                                     <label className="col-sm-3 control-label no-padding-right" htmlFor="form-field-1-1"> Nomor Jobs </label>
                                     <div className="col-sm-9">
-                                    <Select onChange={this.handleChange} options={this.state.machine.map( e => ({ label: e.short_name, value: e.id}))} />
+                                        <Select onChange={this.handleChange} options={this.state.machine.map(e => ({ label: e.short_name, value: e.id }))} />
                                     </div>
                                 </div>
                                 <div className="space-4" />
@@ -108,7 +128,7 @@ class ScheduleCreate extends React.Component {
                                 </div>
                                 <div className="clearfix form-actions">
                                     <div className="col-md-offset-3 col-md-9">
-                                        <button className="btn btn-info" type="button">
+                                        <button className="btn btn-info" type="button" onClick={this.handleSubmit}>
                                             <i className="ace-icon fa fa-check bigger-110" />
                                             Submit</button>
                                         &nbsp; &nbsp; &nbsp;
@@ -119,8 +139,8 @@ class ScheduleCreate extends React.Component {
                                 </div>
                                 <div className="hr hr-24" />
                             </form>
-    
-    
+
+
                         </div>
                     </div>
                 </div>
