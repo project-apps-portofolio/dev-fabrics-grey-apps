@@ -9,7 +9,7 @@ const CustomerCreate = () => {
             </div>
 
             <div className="row">
-                <h1>Form Create </h1>
+                <h1>Form Create</h1>
             </div>
         </div>
     )

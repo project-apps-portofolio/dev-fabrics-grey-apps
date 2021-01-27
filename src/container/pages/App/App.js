@@ -54,22 +54,22 @@ function App() {
                     </Link>
                 <b className="arrow" />
               </li>
+
               <li className="hover">
                 <a href="#" className="dropdown-toggle">
-                  <i className="menu-icon fa fa-desktop" />
-                  <span className="menu-text">
-                   Machine
-                  </span>
+                  <i className="menu-icon fa fa-users" />
+                  <span className="menu-text">Customers</span>
                   <b className="arrow fa fa-angle-down" />
                 </a>
                 <b className="arrow" />
                 <ul className="submenu">
                   <li className="hover">
-                   <Link to="/machine/index">
-                   <i className="menu-icon fa fa-caret-right" />
-                      Management
-                   </Link>
-                   </li>
+                    <Link to="/customers">
+                      <i className="menu-icon fa fa-caret-right" />
+                      Pelanggan Fabric Grey
+                  </Link>
+                    <b className="arrow" />
+                  </li>
                 </ul>
               </li>
               <li className="hover">
@@ -106,8 +106,68 @@ function App() {
               </li>
               <li className="hover">
                 <a href="#" className="dropdown-toggle">
-                  <i className="menu-icon fa fa-list" />
-                  <span className="menu-text"> Fabric Grey Report </span>
+                  <i className="menu-icon fa fa-calendar" />
+                  <span className="menu-text">Schedules</span>
+                  <b className="arrow fa fa-angle-down" />
+                </a>
+                <b className="arrow" />
+                <ul className="submenu">
+                  <li className="hover">
+                    <Link to="/schedules/timeline">
+                      <i className="menu-icon fa fa-caret-right" />
+                      Schdules Timeline
+                  </Link>
+                    <b className="arrow" />
+                  </li>
+                  <li className="hover">
+                    <Link to="/schedules">
+                      <i className="menu-icon fa fa-caret-right" />
+                      Jadwal Grey
+                  </Link>
+                    <b className="arrow" />
+                  </li>
+                </ul>
+              </li>
+              <li className="hover">
+                <a href="#" className="dropdown-toggle">
+                  <i className="menu-icon fa fa-industry" />
+                  <span className="menu-text">
+                   Machine
+                  </span>
+                  <b className="arrow fa fa-angle-down" />
+                </a>
+                <b className="arrow" />
+                <ul className="submenu">
+                  <li className="hover">
+                   <Link to="/machine/index">
+                   <i className="menu-icon fa fa-caret-right" />
+                      Management
+                   </Link>
+                   </li>
+                </ul>
+              </li>
+              <li className="hover">
+                <a href="#" className="dropdown-toggle">
+                  <i className="menu-icon fa fa-tasks" />
+                  <span className="menu-text">Jobs</span>
+                  <b className="arrow fa fa-angle-down" />
+                </a>
+                <b className="arrow" />
+                <ul className="submenu">
+                  <li className="hover">
+                    <Link to="/jobs">
+                      <i className="menu-icon fa fa-caret-right" />
+                      Kartu Kain Grey
+                  </Link>
+                    <b className="arrow" />
+                  </li>
+                </ul>
+              </li>
+
+              <li className="hover">
+                <a href="#" className="dropdown-toggle">
+                  <i className="menu-icon fa fa-bar-chart" />
+                  <span className="menu-text"> Report </span>
                   <b className="arrow fa fa-angle-down" />
                 </a>
                 <b className="arrow" />
@@ -138,57 +198,23 @@ function App() {
               </li>
               <li className="hover">
                 <a href="#" className="dropdown-toggle">
-                  <i className="menu-icon fa fa-desktop" />
-                  <span className="menu-text">Schedules</span>
+                  <i className="menu-icon fa fa-cog" />
+                  <span className="menu-text">Setting</span>
                   <b className="arrow fa fa-angle-down" />
                 </a>
                 <b className="arrow" />
                 <ul className="submenu">
                   <li className="hover">
-                    <Link to="/schedules/timeline">
+                    <Link to="/fabric/list">
                       <i className="menu-icon fa fa-caret-right" />
-                      Schdules Timeline
+                     Profile
                   </Link>
                     <b className="arrow" />
                   </li>
                   <li className="hover">
-                    <Link to="/schedules">
+                    <Link to="/fabric/list">
                       <i className="menu-icon fa fa-caret-right" />
-                      Jadwal Grey
-                  </Link>
-                    <b className="arrow" />
-                  </li>
-                </ul>
-              </li>
-              <li className="hover">
-                <a href="#" className="dropdown-toggle">
-                  <i className="menu-icon fa fa-desktop" />
-                  <span className="menu-text">Jobs</span>
-                  <b className="arrow fa fa-angle-down" />
-                </a>
-                <b className="arrow" />
-                <ul className="submenu">
-                  <li className="hover">
-                    <Link to="/jobs">
-                      <i className="menu-icon fa fa-caret-right" />
-                      Kartu Kain Grey
-                  </Link>
-                    <b className="arrow" />
-                  </li>
-                </ul>
-              </li>
-              <li className="hover">
-                <a href="#" className="dropdown-toggle">
-                  <i className="menu-icon fa fa-desktop" />
-                  <span className="menu-text">Customers</span>
-                  <b className="arrow fa fa-angle-down" />
-                </a>
-                <b className="arrow" />
-                <ul className="submenu">
-                  <li className="hover">
-                    <Link to="/customers">
-                      <i className="menu-icon fa fa-caret-right" />
-                      Pelanggan Fabric Grey
+                      Logout
                   </Link>
                     <b className="arrow" />
                   </li>

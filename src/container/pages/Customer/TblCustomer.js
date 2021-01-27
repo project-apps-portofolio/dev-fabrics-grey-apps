@@ -73,8 +73,7 @@ class TblCustomer extends React.Component {
                                         <a href="#" className="red"><i className="fa fa-trash ace-icon bigger-130"></i></a>
                                     </div>
                                 </div>
-                            </div>
-                            // <button onClick={() => this.setState({ navigate: true })}></button>                               
+                            </div>                             
                             , td
                         ),
                 }
