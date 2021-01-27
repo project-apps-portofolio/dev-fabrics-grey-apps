@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const CustomerCreate = () => {
+    const initialize = {
+        code: '',
+        name: '',
+        nomor_pelanggan: '',
+        short_name: '',
+        address: '',
+        city: '',
+        post_code: '',
+        director_name: '',
+        employee_name: '',
+        phone: '',
+        fax: '',
+        mobile_phone: '',
+    }
+
+    const [ customers , setCustomer] = useState(initialize);
+
     return (
         <div className="page-content">
             <div className="page-header">
@@ -173,6 +191,12 @@ const CustomerCreate = () => {
 
                         
                         </div>
+                    </div>
+                    <div className="btn-group pull-right">
+                       <div className="form-group">
+                       <Link to="/customers" className="btn btn-sm btn-primary"> Back </Link> &nbsp;
+                        <Link className="btn btn-sm btn-primary"> Submit </Link>
+                       </div>
                     </div>
                 </div>
             </div>
