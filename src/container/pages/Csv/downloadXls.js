@@ -9,6 +9,7 @@ const ExcelColumn = ReactExport.ExcelFile.ExcelColumn;
 const DownloadXls = () => {
 
     const [fabric , setFabric] = useState([]);
+    const [showLoading, setShowLoading] = useState(false)
 
     useEffect(() => {
         async function ApiFabric() {
@@ -16,7 +17,13 @@ const DownloadXls = () => {
             const result = res.data.data
             setFabric(result);
         }
+        const timer = window.setInterval(() => {
+            console.log('5 minutes has passed');
         ApiFabric();
+        }, 1000*60*5);
+          return () => { // Return callback to run on unmount.
+            window.clearInterval(timer);
+          };
     })
     return (
         <ExcelFile element={<button className="btn btn-sm btn-success"><i className="fa fa-file"></i></button>}>

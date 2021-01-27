@@ -25,9 +25,9 @@ class DatatableList extends React.Component {
       }
 
       componentDidMount() {
-        this.getfabricData().then(() => this.sync());
-
         this.timer = setInterval(5000);
+        console.log('ini');
+        this.getfabricData().then(() => this.sync());
       }
 
       componentWillUnmount() {
