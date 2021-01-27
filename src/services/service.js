@@ -55,6 +55,10 @@ const getCustomer = () => {
     return http.get('/customers');
 }
 
+const postCustomer = data => {
+    return http.post('/customers/store', data);
+}
+
 // const update = (id, data) => {
 //     return http.put(`/fabric/index/${id}`, data);
 // }
@@ -79,6 +83,7 @@ export default {
     getJob,
     postJob,
     getCustomer,
+    postCustomer,
     // update,
     // remove,
     // removeAll,
