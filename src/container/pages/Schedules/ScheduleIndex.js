@@ -21,7 +21,13 @@ class ScheduleIndex extends React.Component {
     componentDidMount() {
         this.getSchedule();
         console.log(this.state.schedule)
+        this.timer = setInterval(5000);
     }
+
+    componentWillUnmount() {
+        clearInterval(this.timer);
+    }
+
 
     deleteRow = (id) => { const filteredData = this.state.schedule.filter((i) => i.id !== id); this.setState({ schedule: filteredData }); };
 

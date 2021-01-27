@@ -18,6 +18,11 @@ class JobIndex extends React.Component {
 
     componentDidMount() {
         this.getJobs();
+        this.timer = setInterval(5000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timer);
     }
 
     render() {

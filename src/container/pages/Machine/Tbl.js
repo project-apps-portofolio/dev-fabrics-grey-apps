@@ -21,6 +21,11 @@ class TblMachine extends React.Component {
 
     componentDidMount() {
         this.getMachine().then(() => this.sync());
+        this.timer = setInterval(5000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timer);
     }
 
     sync() {
