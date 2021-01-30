@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../../assets/css/jquery.dataTables.css';
 import Service from '../../../services/service';
+import ServiceCustomer from '../../../services/serviceCustomer';
 import { Link } from 'react-router-dom';
 import * as ReactDOM from 'react-dom';
 import Modal from 'react-modal';
@@ -9,6 +10,7 @@ class TblCustomer extends React.Component {
 
     constructor(props) {
         super(props);
+            this.buttonDelete = this.buttonDelete.bind(this);
             this.state = {
                 customers:[]
             }
@@ -22,6 +24,11 @@ class TblCustomer extends React.Component {
 
     componentDidMount() {
         this.getCustomers().then(() => this.sync());
+    }
+
+    buttonDelete = (id) => {
+        const data = ServiceCustomer.deleteCustomer(id);
+        window.location.reload();
     }
 
     sync() {
@@ -70,7 +77,7 @@ class TblCustomer extends React.Component {
                                         <a href="#" className="green"><i className="fa fa-pencil ace-icon bigger-130"></i></a>
                                     </div>
                                     <div className="form-group">
-                                        <a href="#" className="red"><i className="fa fa-trash ace-icon bigger-130"></i></a>
+                                        <a href="#" onClick={() => this.buttonDelete(rowData.id)} className="red"><i className="fa fa-trash ace-icon bigger-130"></i></a>
                                     </div>
                                 </div>
                             </div>                             
