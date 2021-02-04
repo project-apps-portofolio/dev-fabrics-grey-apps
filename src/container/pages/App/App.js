@@ -20,6 +20,9 @@ import JobIndex from '../Job/Index';
 import JobCreate from '../Job/Create';
 import CustomerCreate from '../Customer/Create';
 import CustomerIndex from '../Customer/Index';
+import LearningIndex from '../Learning/learning';
+import PropsIndex from '../Learning/ComponentProps/page1';
+import PropsTwoIndex from '../Learning/ComponentProps/page2';
 
 function App() {
   return (
@@ -220,6 +223,23 @@ function App() {
                   </li>
                 </ul>
               </li>
+              <li className="hover">
+                <a href="#" className="dropdown-toggle">
+                  <i className="menu-icon fa fa-cog" />
+                  <span className="menu-text">Learning</span>
+                  <b className="arrow fa fa-angle-down" />
+                </a>
+                <b className="arrow" />
+                <ul className="submenu">
+                  <li className="hover">
+                    <Link to="/learning">
+                      <i className="menu-icon fa fa-caret-right" />
+                     Learning
+                  </Link>
+                    <b className="arrow" />
+                  </li>
+                </ul>
+              </li>
             </ul>
           </div>
 
@@ -255,6 +275,11 @@ function App() {
                 <Route exact path={"/customers"} component={CustomerIndex} />
                 <Route path={"/customers/create"} component={CustomerCreate} />
 
+                {/* Learning */}
+
+                <Route exact path={"/learning"} component={LearningIndex} />
+                <Route path={"/learning/props"} component={PropsIndex} />
+                <Route path={"/learning/test"} component={PropsTwoIndex} />
               </Switch>
             </div>
           </div>
