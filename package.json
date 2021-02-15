@@ -45,6 +45,7 @@
     "jquery": "^3.5.1",
     "moment": "^2.29.1",
     "mui-datatables": "^3.7.4",
+    "rc-queue-anim": "^1.8.5",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-datetime-picker": "^3.0.4",
@@ -52,6 +53,7 @@
     "react-drag-drawer": "^3.3.4",
     "react-export-excel": "^0.5.3",
     "react-modal": "^3.12.1",
+    "react-overdrive": "0.0.10",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
@@ -87,6 +89,7 @@
     ]
   },
   "devDependencies": {
-    "@types/date-fns": "^2.6.0"
+    "@types/date-fns": "^2.6.0",
+    "react-motions": "^0.3.0"
   }
 }
